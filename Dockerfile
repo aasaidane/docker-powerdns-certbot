@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-MAINTAINER SAIDANE Ahmed Amine <contact@aasaidane.com>
+MAINTAINER SAIDANE Ahmed Amine <https://github.com/aasaidane/>
 
 # Environment variables
 #######################
