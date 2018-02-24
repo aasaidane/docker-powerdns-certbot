@@ -5,6 +5,15 @@ Let's Encrypt DNS challenge with PowerDNS.
 
 See [Dockerfile](Dockerfile#L12)
 
+### CAA record
+Since Let’s Encrypt checks CAA records before every certificate we issue, sometimes we get errors even for domains that haven’t set any CAA records.
+
+If you want to generate a certificate for your domain name, make sure that the "CAA" registration is present on the DNS server. Otherwise it will have to be added:
+```
+example.com. CAA 0 issue "letsencrypt.org"
+```
+
+
 ## How to use
 
 ### Create certificates
@@ -19,7 +28,7 @@ docker run \
     create -m postmaster@example.com -d example.com -d www.example.com
 ```
 
-### Renew
+### Renew certificates
 
 ```
 docker run \
